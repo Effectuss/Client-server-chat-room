@@ -1,0 +1,14 @@
+dependencies {
+    implementation project(":common")
+}
+
+jar {
+    archiveFileName = 'client-gui.jar'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes 'Main-Class': 'edu.effectuss.Main'
+    }
+    from {
+        configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

@@ -2,18 +2,26 @@ plugins {
     id 'java'
 }
 
-group = 'edu.effectuss'
-version = '1.0-SNAPSHOT'
+subprojects {
+    apply plugin: 'java'
 
-repositories {
-    mavenCentral()
-}
+    group = 'edu.effectuss.focus'
+    version = '1.0'
 
-dependencies {
-    testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-}
+    repositories {
+        mavenCentral()
+    }
 
-test {
-    useJUnitPlatform()
+    dependencies {
+        testImplementation platform('org.junit:junit-bom:5.9.1')
+        testImplementation 'org.junit.jupiter:junit-jupiter'
+        implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.21.0'
+        implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.21.0'
+        annotationProcessor 'org.projectlombok:lombok:1.18.30'
+        compileOnly 'org.projectlombok:lombok:1.18.30'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
 }
