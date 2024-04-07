@@ -39,3 +39,6 @@ This project is a client-server chat application with a GUI interface for the cl
 6. Start chatting!
 
 ## Demonstration
+
+https://github.com/Effectuss/Client-server-chat-room/assets/111355453/7c4dff9d-5582-447a-b5db-018f6c58bcd7
+
